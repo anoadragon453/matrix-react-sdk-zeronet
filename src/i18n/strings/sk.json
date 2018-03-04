@@ -110,7 +110,7 @@
     "%(senderName)s requested a VoIP conference.": "%(senderName)s požiadal o VOIP konferenciu.",
     "%(senderName)s invited %(targetName)s.": "%(senderName)s pozval %(targetName)s.",
     "%(senderName)s banned %(targetName)s.": "%(senderName)s zakázal vstup %(targetName)s.",
-    "%(senderName)s changed their display name from %(oldDisplayName)s to %(displayName)s.": "%(senderName)s si zmenil zobrazované meno z %(oldDisplayName)s na %(displayName)s.",
+    "%(oldDisplayName)s changed their display name to %(displayName)s.": "%(senderName)s si zmenil zobrazované meno z %(oldDisplayName)s na %(displayName)s.",
     "%(senderName)s set their display name to %(displayName)s.": "%(senderName)s si nastavil zobrazované meno %(displayName)s.",
     "%(senderName)s removed their display name (%(oldDisplayName)s).": "%(senderName)s odstránil svoje zobrazované meno (%(oldDisplayName)s).",
     "%(senderName)s removed their profile picture.": "%(senderName)s si z profilu odstránil obrázok.",

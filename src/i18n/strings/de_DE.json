@@ -266,7 +266,7 @@
     "%(names)s and one other are typing": "%(names)s und ein weiteres Raum-Mitglied schreiben",
     "%(senderName)s answered the call.": "%(senderName)s hat den Anruf angenommen.",
     "%(senderName)s banned %(targetName)s.": "%(senderName)s hat %(targetName)s dauerhaft aus dem Raum verbannt.",
-    "%(senderName)s changed their display name from %(oldDisplayName)s to %(displayName)s.": "%(senderName)s hat den Anzeigenamen von \"%(oldDisplayName)s\" auf \"%(displayName)s\" geändert.",
+    "%(oldDisplayName)s changed their display name to %(displayName)s.": "%(senderName)s hat den Anzeigenamen von \"%(oldDisplayName)s\" auf \"%(displayName)s\" geändert.",
     "%(senderName)s changed their profile picture.": "%(senderName)s hat das Profilbild geändert.",
     "%(senderName)s changed the power level of %(powerLevelDiffText)s.": "%(senderName)s hat das Berechtigungslevel von %(powerLevelDiffText)s geändert.",
     "%(senderDisplayName)s changed the room name to %(roomName)s.": "%(senderDisplayName)s hat den Raumnamen geändert zu %(roomName)s.",

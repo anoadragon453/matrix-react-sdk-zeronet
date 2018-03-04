@@ -282,7 +282,7 @@
     "Bulk Options": "Aukera masiboak",
     "Can't connect to homeserver - please check your connectivity, ensure your <a>homeserver's SSL certificate</a> is trusted, and that a browser extension is not blocking requests.": "Ezin da hasiera zerbitzarira konektatu, egiaztatu zure konexioa, ziurtatu zure <a>hasiera zerbitzariaren SSL ziurtagiria</a> fidagarritzat jotzen duela zure gailuak, eta nabigatzailearen pluginen batek ez dituela eskaerak blokeatzen.",
     "Can't connect to homeserver via HTTP when an HTTPS URL is in your browser bar. Either use HTTPS or <a>enable unsafe scripts</a>.": "Ezin zara hasiera zerbitzarira HTTP bidez konektatu zure nabigatzailearen barran dagoen URLa HTTS bada. Erabili HTTPS edo <a>gaitu script ez seguruak</a>.",
-    "%(senderName)s changed their display name from %(oldDisplayName)s to %(displayName)s.": "%(senderName)s erabiltzaileak bere pantaila izena aldatu du, %(oldDisplayName)s izatetik %(displayName)s izatera.",
+    "%(oldDisplayName)s changed their display name to %(displayName)s.": "%(senderName)s erabiltzaileak bere pantaila izena aldatu du, %(oldDisplayName)s izatetik %(displayName)s izatera.",
     "%(senderName)s changed their profile picture.": "%(senderName)s erabiltzaileak bere profileko argazkia aldatu du.",
     "%(senderName)s changed the power level of %(powerLevelDiffText)s.": "%(senderName)s erabiltzaileak %(powerLevelDiffText)s erabiltzailearen botere maila aldatu du.",
     "%(senderDisplayName)s changed the room name to %(roomName)s.": "%(senderDisplayName)s erabiltzaileak gelaren izena aldatu du, orain %(roomName)s da.",

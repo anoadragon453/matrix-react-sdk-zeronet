@@ -14,7 +14,7 @@ $::fixups = [split(/\n/, <<EOT
 %(senderName)s requested a VoIP conference.
 %(senderName)s invited %(targetName)s.
 %(senderName)s banned %(targetName)s.
-%(senderName)s changed their display name from %(oldDisplayName)s to %(displayName)s.
+%(oldDisplayName)s changed their display name to %(displayName)s.
 %(senderName)s set their display name to %(displayName)s.
 %(senderName)s removed their display name (%(oldDisplayName)s).
 %(senderName)s removed their profile picture.
@@ -97,7 +97,7 @@ if ($_ =~ m/^(\s+)"(.*?)"(: *)"(.*?)"(,?)$/) {
         if ($ARGV !~ /(zh_Hans|zh_Hant|th)\.json$/ && $src eq $fixup && $dst !~ /\.$/) {
             print STDERR "fixing up dst: $dst\n";
             $dst .= '.';
-            $sub = 1;            
+            $sub = 1;
         }
 
         if ($sub) {
@@ -105,7 +105,7 @@ if ($_ =~ m/^(\s+)"(.*?)"(: *)"(.*?)"(,?)$/) {
             $dst =~ s/"/\\"/g;
             print qq($indent"$src"$colon"$dst"$comma\n);
             last;
-        }        
+        }
     }
 }
 

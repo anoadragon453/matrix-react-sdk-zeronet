@@ -111,7 +111,7 @@
     "%(senderName)s requested a VoIP conference.": "%(senderName)s requested a VoIP conference.",
     "%(senderName)s invited %(targetName)s.": "%(senderName)s invited %(targetName)s.",
     "%(senderName)s banned %(targetName)s.": "%(senderName)s banned %(targetName)s.",
-    "%(senderName)s changed their display name from %(oldDisplayName)s to %(displayName)s.": "%(senderName)s changed their display name from %(oldDisplayName)s to %(displayName)s.",
+    "%(oldDisplayName)s changed their display name to %(displayName)s.": "%(oldDisplayName)s changed their display name to %(displayName)s.",
     "%(senderName)s set their display name to %(displayName)s.": "%(senderName)s set their display name to %(displayName)s.",
     "%(senderName)s removed their display name (%(oldDisplayName)s).": "%(senderName)s removed their display name (%(oldDisplayName)s).",
     "%(senderName)s removed their profile picture.": "%(senderName)s removed their profile picture.",

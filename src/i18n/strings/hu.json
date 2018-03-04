@@ -82,7 +82,7 @@
     "Can't connect to homeserver via HTTP when an HTTPS URL is in your browser bar. Either use HTTPS or <a>enable unsafe scripts</a>.": "Nem lehet csatlakozni a saját szerverhez HTTP-n keresztül ha HTTPS van a böngésző címsorában. Vagy használj HTTPS-t vagy <a>engedélyezd a nem biztonságos script-et</a>.",
     "Can't load user settings": "A felhasználói beállítások nem tölthetők be",
     "Change Password": "Jelszó megváltoztatása",
-    "%(senderName)s changed their display name from %(oldDisplayName)s to %(displayName)s.": "%(senderName)s megváltoztatta a nevét erről: %(oldDisplayName)s erre: %(displayName)s.",
+    "%(oldDisplayName)s changed their display name to %(displayName)s.": "%(senderName)s megváltoztatta a nevét erről: %(oldDisplayName)s erre: %(displayName)s.",
     "%(senderName)s changed their profile picture.": "%(senderName)s megváltoztatta a profil képét.",
     "%(senderName)s changed the power level of %(powerLevelDiffText)s.": "%(senderName)s megváltoztatta a hozzáférési szintjét erre: %(powerLevelDiffText)s.",
     "%(senderDisplayName)s changed the room name to %(roomName)s.": "%(senderDisplayName)s megváltoztatta a szoba nevét erre: %(roomName)s.",
