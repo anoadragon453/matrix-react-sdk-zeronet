@@ -16,6 +16,7 @@ limitations under the License.
 
 import Promise from 'bluebird';
 import SettingsStore from "./settings/SettingsStore";
+import ZeroFrameLocalStorage from './utils/ZeroFrameLocalStorage.js';
 const request = require('browser-request');
 
 const SdkConfig = require('./SdkConfig');
@@ -39,7 +40,8 @@ class ScalarAuthClient {
 
     // Returns a scalar_token string
     getScalarToken() {
-        const token = window.localStorage.getItem("mx_scalar_token");
+	let localStorage = ZeroFrameLocalStorage.getStorage();
+        const token = localStorage.getItem("mx_scalar_token");
 
         if (!token) {
             return this.registerForToken();
@@ -90,7 +92,8 @@ class ScalarAuthClient {
             // Now we can send that to scalar and exchange it for a scalar token
             return this.exchangeForScalarToken(token_object);
         }).then((token_object) => {
-            window.localStorage.setItem("mx_scalar_token", token_object);
+	    let localStorage = ZeroFrameLocalStorage.getStorage();
+            localStorage.setItem("mx_scalar_token", token_object);
             return token_object;
         });
     }

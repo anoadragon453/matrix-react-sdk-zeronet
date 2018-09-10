@@ -15,8 +15,7 @@ limitations under the License.
 */
 
 import Matrix from 'matrix-js-sdk';
-
-const localStorage = window.localStorage;
+import ZeroFrameLocalStorage from './ZeroFrameLocalStorage.js';
 
 // just *accessing* indexedDB throws an exception in firefox with
 // indexeddb disabled.
@@ -39,14 +38,7 @@ try {
  * @returns {MatrixClient} the newly-created MatrixClient
  */
 export default function createMatrixClient(opts) {
-    const storeOpts = {
-        useAuthorizationHeader: true,
-    };
-
-    if (localStorage) {
-        storeOpts.sessionStore = new Matrix.WebStorageSessionStore(localStorage);
-    }
-
+    let localStorage = ZeroFrameLocalStorage.getStorage();
     if (indexedDB && localStorage) {
         // FIXME: bodge to remove old database. Remove this after a few weeks.
         indexedDB.deleteDatabase("matrix-js-sdk:default");

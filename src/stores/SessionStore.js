@@ -14,10 +14,11 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 import dis from '../dispatcher';
+import ZeroFrameLocalStorage from '../utils/ZeroFrameLocalStorage.js';
 import {Store} from 'flux/utils';
 
 const INITIAL_STATE = {
-    cachedPassword: localStorage.getItem('mx_pass'),
+    cachedPassword: ZeroFrameLocalStorage.getItem('mx_pass'),
 };
 
 /**

@@ -40,6 +40,7 @@ import * as Lifecycle from '../../Lifecycle';
 // LifecycleStore is not used but does listen to and dispatch actions
 require('../../stores/LifecycleStore');
 import PageTypes from '../../PageTypes';
+import ZeroFrameLocalStorage from '../../utils/ZeroFrameLocalStorage.js';
 
 import createRoom from "../../createRoom";
 import KeyRequestHandler from '../../KeyRequestHandler';
@@ -196,12 +197,13 @@ export default React.createClass({
     },
 
     getCurrentHsUrl: function() {
+        let localStorage = ZeroFrameLocalStorage.getStorage();
         if (this.state.register_hs_url) {
             return this.state.register_hs_url;
         } else if (MatrixClientPeg.get()) {
             return MatrixClientPeg.get().getHomeserverUrl();
-        } else if (window.localStorage && window.localStorage.getItem("mx_hs_url")) {
-            return window.localStorage.getItem("mx_hs_url");
+        } else if (localStorage && localStorage.getItem("mx_hs_url")) {
+            return localStorage.getItem("mx_hs_url");
         } else {
             return this.getDefaultHsUrl();
         }
@@ -216,12 +218,13 @@ export default React.createClass({
     },
 
     getCurrentIsUrl: function() {
+        let localStorage = ZeroFrameLocalStorage.getStorage();
         if (this.state.register_is_url) {
             return this.state.register_is_url;
         } else if (MatrixClientPeg.get()) {
             return MatrixClientPeg.get().getIdentityServerUrl();
-        } else if (window.localStorage && window.localStorage.getItem("mx_is_url")) {
-            return window.localStorage.getItem("mx_is_url");
+        } else if (localStorage && localStorage.getItem("mx_is_url")) {
+            return localStorage.getItem("mx_is_url");
         } else {
             return this.getDefaultIsUrl();
         }
@@ -232,6 +235,7 @@ export default React.createClass({
     },
 
     componentWillMount: function() {
+        let localStorage = ZeroFrameLocalStorage.getStorage();
         SdkConfig.put(this.props.config);
 
         // Used by _viewRoom before getting state from sync
@@ -265,7 +269,7 @@ export default React.createClass({
         // Use the locally-stored team token first, then as a fall-back, check to see if
         // a referral link was used, which will contain a query parameter `team_token`.
         this._teamToken = routedTeamToken ||
-            window.localStorage.getItem('mx_team_token') ||
+            localStorage.getItem('mx_team_token') ||
             window.sessionStorage.getItem('mx_team_token');
 
         // Some users have ended up with "undefined" as their local storage team token,
@@ -853,6 +857,7 @@ export default React.createClass({
         }
 
         waitFor.done(() => {
+            let localStorage = ZeroFrameLocalStorage.getStorage();
             let presentedId = roomInfo.room_alias || roomInfo.room_id;
             const room = MatrixClientPeg.get().getRoom(roomInfo.room_id);
             if (room) {

@@ -29,6 +29,7 @@ import RtsClient from '../../../RtsClient';
 import { _t, _td } from '../../../languageHandler';
 import SdkConfig from '../../../SdkConfig';
 import SettingsStore from "../../../settings/SettingsStore";
+import ZeroFrameLocalStorage from '../../../utils/ZeroFrameLocalStorage';
 import { messageForResourceLimitError } from '../../../utils/ErrorUtils';
 
 const MIN_PASSWORD_LENGTH = 6;
@@ -240,9 +241,10 @@ module.exports = React.createClass({
                 extra.emailSid,
                 extra.clientSecret,
             ).then((data) => {
+                let localStorage = ZeroFrameLocalStorage.getStorage();
                 const teamToken = data.team_token;
                 // Store for use /w welcome pages
-                window.localStorage.setItem('mx_team_token', teamToken);
+                localStorage.setItem('mx_team_token', teamToken);
 
                 this._rtsClient.getTeam(teamToken).then((team) => {
                     console.log(
