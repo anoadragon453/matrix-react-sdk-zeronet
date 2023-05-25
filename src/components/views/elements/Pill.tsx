@@ -120,14 +120,17 @@ export const Pill: React.FC<PillProps> = ({ type: propType, url, inMessage, room
     const tip = hover && resourceId ? <Tooltip label={resourceId} alignment={Alignment.Right} /> : null;
     let avatar: ReactElement | null = null;
     let pillText: string | null = text;
+    let leadsToElement: ReactElement | null = null;
 
     switch (type) {
         case PillType.EventInOtherRoom:
             {
                 avatar = <PillRoomAvatar shouldShowPillAvatar={shouldShowPillAvatar} room={targetRoom} />;
-                pillText = _t("Message in %(room)s", {
-                    room: text,
-                });
+                pillText = text;
+                // TODO: Make this a file.
+                leadsToElement = <svg aria-label="Message" aria-hidden="false" role="img" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path fill="currentColor" d="M4.79805 3C3.80445 3 2.99805 3.8055 2.99805 4.8V15.6C2.99805 16.5936 3.80445 17.4 4.79805 17.4H7.49805V21L11.098 17.4H19.198C20.1925 17.4 20.998 16.5936 20.998 15.6V4.8C20.998 3.8055 20.1925 3 19.198 3H4.79805Z"></path>
+                    </svg>;
             }
             break;
         case PillType.EventInSameRoom:
@@ -155,6 +158,12 @@ export const Pill: React.FC<PillProps> = ({ type: propType, url, inMessage, room
             return null;
     }
 
+    let rightChevron: ReactElement | null = null;
+    if (leadsToElement) {
+        // Render a right-pointing chevron leading towards the given element.
+        rightChevron = <span className="mx_Pill_ChevronRight"></span>;
+    }
+
     return (
         <bdi>
             <MatrixClientContext.Provider value={MatrixClientPeg.get()}>
@@ -168,6 +177,8 @@ export const Pill: React.FC<PillProps> = ({ type: propType, url, inMessage, room
                     >
                         {avatar}
                         <span className="mx_Pill_text">{pillText}</span>
+                        {rightChevron}
+                        {leadsToElement}
                         {tip}
                     </a>
                 ) : (
